@@ -7,18 +7,15 @@ import java.io.File;
 
 /**
  * This class contains the action listener for the pop up menu.
- *
- * @author :  Michael Nistor
- * 
- * @version :  1.0  10.10.2015
  */
 public class PopUpController implements ActionListener {
 
     private MainController mainController;
 
-    public PopUpController(MainController controller){
+    public PopUpController(MainController controller) {
         this.mainController = controller;
     }
+
     /**
      * Invoked when an action occurs.
      *
@@ -42,8 +39,8 @@ public class PopUpController implements ActionListener {
             }
             list.ensureIndexIsVisible(index);
             model.insertElementAt(chooser.getSelectedFile(), index); // insert new source directory
-            if (this.mainController.getTargetText().length() != 0){
-            	this.mainController.setStartCancelButtonEnabled(true);            	
+            if (this.mainController.getTargetText().length() != 0) {
+                this.mainController.setStartCancelButtonEnabled(true);
             }
         }
         if (actionCommand.equals("DELETE")) {
@@ -55,9 +52,8 @@ public class PopUpController implements ActionListener {
                     index--;
                 }
                 list.ensureIndexIsVisible(index);
-            }
-            else {
-            	this.mainController.setStartCancelButtonEnabled(false);
+            } else {
+                this.mainController.setStartCancelButtonEnabled(false);
             }
         }
     }
